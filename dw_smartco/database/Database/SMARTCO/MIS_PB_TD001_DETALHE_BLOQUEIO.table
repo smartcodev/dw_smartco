@@ -9,7 +9,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
     </column>
     <column>
       <name>PRODUTO</name>
@@ -57,50 +57,6 @@
       <notNull>true</notNull>
     </column>
   </columns>
-  <constraints>
-    <constraint class="oracle.javatools.db.PKConstraint">
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.NameBasedID">
-          <name>ID</name>
-          <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
-            <schemaName>CICADMIN</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <schemaName>CICADMIN</schemaName>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <enabled>true</enabled>
-      <indexID class="oracle.javatools.db.NameBasedID">
-        <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
-        <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
-          <schemaName>CICADMIN</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <schemaName>CICADMIN</schemaName>
-        <type>INDEX</type>
-      </indexID>
-    </constraint>
-  </constraints>
-  <indexes>
-    <index>
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
-      <columnExpressions>
-        <columnExpression>
-          <expressionSource>ID</expressionSource>
-          <orderType>ASC</orderType>
-        </columnExpression>
-      </columnExpressions>
-      <indexType>UNIQUE</indexType>
-      <schema>
-        <name>CICADMIN</name>
-      </schema>
-      <systemGenerated>true</systemGenerated>
-    </index>
-  </indexes>
   <properties>
     <entry>
       <key>TableType</key>
@@ -108,6 +64,6 @@
     </entry>
   </properties>
   <schema>
-    <name>CICADMIN</name>
+    <name>SMARTCO</name>
   </schema>
 </table>

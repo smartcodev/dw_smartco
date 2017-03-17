@@ -3,10 +3,10 @@
   <name>MIS_TD003_LOCALIDADE</name>
   <columns>
     <column>
-      <name>ID_LOCALIDADE</name>
+      <name>ID</name>
       <dataTypeUsage>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>INTEGER</typeName>
+          <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
       <notNull>true</notNull>
@@ -107,7 +107,7 @@
       <name>MIS_TD003_LOCALIDADE_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
-          <name>ID_LOCALIDADE</name>
+          <name>ID</name>
           <parent class="oracle.javatools.db.NameBasedID">
             <name>MIS_TD003_LOCALIDADE</name>
             <schemaName>SMARTCO</schemaName>
@@ -149,7 +149,7 @@
       <name>MIS_TD003_LOCALIDADE_PK</name>
       <columnExpressions>
         <columnExpression>
-          <expressionSource>ID_LOCALIDADE</expressionSource>
+          <expressionSource>ID</expressionSource>
           <orderType>ASC</orderType>
         </columnExpression>
       </columnExpressions>
