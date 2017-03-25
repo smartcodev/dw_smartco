@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
-  <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
+  <name>MIS_JOB</name>
   <columns>
     <column>
       <name>ID</name>
@@ -14,60 +14,15 @@
       </identityProperties>
       <notNull>true</notNull>
     </column>
-    <column>
-      <name>PRODUTO</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-    </column>
-    <column>
-      <name>MOTIVO</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>SUBMOTIVO</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.PKConstraint">
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+      <name>MIS_JOB_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>ID</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
+            <name>MIS_JOB</name>
             <schemaName>SMARTCO</schemaName>
             <type>TABLE</type>
           </parent>
@@ -77,9 +32,9 @@
       </columnIDs>
       <enabled>true</enabled>
       <indexID class="oracle.javatools.db.NameBasedID">
-        <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+        <name>MIS_JOB_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
+          <name>MIS_JOB</name>
           <schemaName>SMARTCO</schemaName>
           <type>TABLE</type>
         </parent>
@@ -90,7 +45,7 @@
   </constraints>
   <indexes>
     <index>
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+      <name>MIS_JOB_PK</name>
       <columnExpressions>
         <columnExpression>
           <expressionSource>ID</expressionSource>
