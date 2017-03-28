@@ -123,10 +123,10 @@
           <name>ID</name>
           <parent class="oracle.javatools.db.NameBasedID">
             <name>MIS_TD003_LOCALIDADE</name>
-            <schemaName>SMARTCO</schemaName>
+            <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SMARTCO</schemaName>
+          <schemaName>CICADMIN</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -135,10 +135,10 @@
         <name>MIS_TD003_LOCALIDADE_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
           <name>MIS_TD003_LOCALIDADE</name>
-          <schemaName>SMARTCO</schemaName>
+          <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>SMARTCO</schemaName>
+        <schemaName>CICADMIN</schemaName>
         <type>INDEX</type>
       </indexID>
     </constraint>
@@ -212,7 +212,7 @@
       </properties>
       <reverse>false</reverse>
       <schema>
-        <name>SMARTCO</name>
+        <name>CICADMIN</name>
       </schema>
       <systemGenerated>false</systemGenerated>
     </index>
@@ -226,7 +226,7 @@
       </columnExpressions>
       <indexType>UNIQUE</indexType>
       <schema>
-        <name>SMARTCO</name>
+        <name>CICADMIN</name>
       </schema>
       <systemGenerated>true</systemGenerated>
     </index>
@@ -238,6 +238,6 @@
     </entry>
   </properties>
   <schema>
-    <name>SMARTCO</name>
+    <name>CICADMIN</name>
   </schema>
 </table>

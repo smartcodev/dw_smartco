@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
-  <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+  <name>MIS_TF001_PORTA_BLOQUEADA</name>
   <columns>
     <column>
       <name>ID</name>
@@ -64,7 +64,7 @@
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>DETALHE_BLOQUEIO_FK</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
             <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
@@ -73,16 +73,14 @@
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.ReferenceID">
-        <name>MIS_PB_TD001_DETALHE_BLOQUEIO_FK</name>
-        <childObjectNames>
-          <childObjectName>ID</childObjectName>
-        </childObjectNames>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_TD001_DETALHE_BLOQU_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_TD001_DETALHE_BLOQUEIO</name>
-          <schemaName>SMARTCO</schemaName>
+          <name>MIS_TD001_DETALHE_BLOQ</name>
+          <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
+        <schemaName>CICADMIN</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
@@ -92,7 +90,7 @@
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>LOCALIDADE_FK</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
             <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
@@ -101,16 +99,14 @@
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.ReferenceID">
-        <name>MIS_TD003_LOCALIDADE_FK</name>
-        <childObjectNames>
-          <childObjectName>ID</childObjectName>
-        </childObjectNames>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_TD003_LOCALIDADE_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
           <name>MIS_TD003_LOCALIDADE</name>
-          <schemaName>SMARTCO</schemaName>
+          <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
+        <schemaName>CICADMIN</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
@@ -120,7 +116,7 @@
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>DATA_BLOQUEIO_FK</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
             <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
@@ -148,7 +144,17 @@
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>ID</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>CICADMIN</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CICADMIN</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>ID_PORTA_VOZ</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
             <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
@@ -160,7 +166,7 @@
       <indexID class="oracle.javatools.db.NameBasedID">
         <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+          <name>MIS_TF001_PORTA_BLOQUEADA</name>
           <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
@@ -175,6 +181,10 @@
       <columnExpressions>
         <columnExpression>
           <expressionSource>ID</expressionSource>
+          <orderType>ASC</orderType>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>ID_PORTA_VOZ</expressionSource>
           <orderType>ASC</orderType>
         </columnExpression>
       </columnExpressions>

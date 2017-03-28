@@ -1,0 +1,207 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
+  <name>MIS_TF001_PORTA_BLOQUEADA</name>
+  <columns>
+    <column>
+      <name>ID</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <identityProperties>
+        <generated>ALWAYS</generated>
+      </identityProperties>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>ID_PORTA_VOZ</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>LOCALIDADE_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>DETALHE_BLOQUEIO_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>DATA_BLOQUEIO_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>SMARTCO</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SMARTCO</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>ID_PORTA_VOZ</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>SMARTCO</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SMARTCO</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TF001_PORTA_BLOQUEADA</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SMARTCO</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUE_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>DETALHE_BLOQUEIO_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>SMARTCO</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SMARTCO</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_TD001_DETALHE_BLOQU_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD001_DETALHE_BLOQ</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SMARTCO</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUE_FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>LOCALIDADE_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>SMARTCO</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SMARTCO</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_TD003_LOCALIDADE_PK</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD003_LOCALIDADE</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SMARTCO</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUE_FK3</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>DATA_BLOQUEIO_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>SMARTCO</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SMARTCO</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>MIS_TD002_TEMPO_FK</name>
+        <childObjectNames>
+          <childObjectName>DAY_ID</childObjectName>
+        </childObjectNames>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD002_TEMPO</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <index>
+      <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>ID</expressionSource>
+          <orderType>ASC</orderType>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>ID_PORTA_VOZ</expressionSource>
+          <orderType>ASC</orderType>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <schema>
+        <name>SMARTCO</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </index>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SMARTCO</name>
+  </schema>
+</table>

@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
-  <name>MIS_TD001_DETALHE_BLOQUEIO</name>
+  <name>MIS_TD001_DETALHE_BLOQ</name>
   <columns>
     <column>
       <name>ID</name>
@@ -89,35 +89,35 @@
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.PKConstraint">
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+      <name>MIS_TD001_DETALHE_BLOQU_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>ID</name>
           <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_TD001_DETALHE_BLOQUEIO</name>
-            <schemaName>SMARTCO</schemaName>
+            <name>MIS_TD001_DETALHE_BLOQ</name>
+            <schemaName>CICADMIN</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SMARTCO</schemaName>
+          <schemaName>CICADMIN</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
       <indexID class="oracle.javatools.db.NameBasedID">
-        <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+        <name>MIS_TD001_DETALHE_BLOQU_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_TD001_DETALHE_BLOQUEIO</name>
-          <schemaName>SMARTCO</schemaName>
+          <name>MIS_TD001_DETALHE_BLOQ</name>
+          <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>SMARTCO</schemaName>
+        <schemaName>CICADMIN</schemaName>
         <type>INDEX</type>
       </indexID>
     </constraint>
   </constraints>
   <indexes>
     <index>
-      <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+      <name>MIS_TD001_DETALHE_BLOQU_PK</name>
       <columnExpressions>
         <columnExpression>
           <expressionSource>ID</expressionSource>
@@ -126,7 +126,7 @@
       </columnExpressions>
       <indexType>UNIQUE</indexType>
       <schema>
-        <name>SMARTCO</name>
+        <name>CICADMIN</name>
       </schema>
       <systemGenerated>true</systemGenerated>
     </index>
@@ -138,6 +138,6 @@
     </entry>
   </properties>
   <schema>
-    <name>SMARTCO</name>
+    <name>CICADMIN</name>
   </schema>
 </table>

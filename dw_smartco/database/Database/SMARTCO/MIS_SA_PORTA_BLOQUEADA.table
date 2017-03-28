@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
-  <name>MIS_PB_SA_PORTA_BLOQUEADA</name>
+  <name>MIS_SA_PORTA_BLOQUEADA</name>
   <columns>
     <column>
       <name>DATA_BASE</name>
@@ -213,7 +213,7 @@
           <typeName>VARCHAR2</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>false</notNull>
+      <notNull>true</notNull>
       <properties>
         <entry>
           <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
@@ -231,7 +231,7 @@
       </properties>
     </column>
     <column>
-      <name>MOTIVO_BLOQUEIO_VOZ</name>
+      <name>MOTIVO_BLOQUEIO</name>
       <dataTypeUsage>
         <attributeValues>
           <entry>
@@ -265,7 +265,7 @@
       </properties>
     </column>
     <column>
-      <name>COMENTARIOS_VOZ</name>
+      <name>SUBMOTIVO_BLOQUEIO</name>
       <dataTypeUsage>
         <attributeValues>
           <entry>
@@ -281,7 +281,7 @@
           <typeName>VARCHAR2</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>false</notNull>
+      <notNull>true</notNull>
       <properties>
         <entry>
           <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
@@ -299,7 +299,7 @@
       </properties>
     </column>
     <column>
-      <name>DATA_BLOQUEIO_VOZ</name>
+      <name>DATA_BLOQUEIO</name>
       <dataTypeUsage>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <typeName>DATE</typeName>
@@ -356,137 +356,27 @@
         </entry>
       </properties>
     </column>
-    <column>
-      <name>PORTA_BANDA</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">30</value>
-          </entry>
-          <entry>
-            <key>unit</key>
-            <value class="java.lang.String">BYTE</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>PORTA_BANDA</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>MIS_PB_SA_PORTA_BLOQUEADA</name>
-              <identifier class="java.math.BigDecimal">262373</identifier>
-              <schemaName>CICADMIN</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <name>MOTIVO_BLOQUEIO_BANDA</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">30</value>
-          </entry>
-          <entry>
-            <key>unit</key>
-            <value class="java.lang.String">BYTE</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>MOTIVO_BLOQUEIO_BANDA</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>MIS_PB_SA_PORTA_BLOQUEADA</name>
-              <identifier class="java.math.BigDecimal">262373</identifier>
-              <schemaName>CICADMIN</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <name>COMENTARIOS_BANDA</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">300</value>
-          </entry>
-          <entry>
-            <key>unit</key>
-            <value class="java.lang.String">BYTE</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>COMENTARIOS_BANDA</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>MIS_PB_SA_PORTA_BLOQUEADA</name>
-              <identifier class="java.math.BigDecimal">262373</identifier>
-              <schemaName>CICADMIN</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <name>DATA_BLOQUEIO_BANDA</name>
-      <dataTypeUsage>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>DATE</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>DATA_BLOQUEIO_BANDA</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>MIS_PB_SA_PORTA_BLOQUEADA</name>
-              <identifier class="java.math.BigDecimal">262373</identifier>
-              <schemaName>CICADMIN</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
   </columns>
+  <indexes>
+    <index>
+      <name>MIS_SA_PORTA_BLOQUEADA_INDEX</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>DATA_BASE</expressionSource>
+          <orderType>DESC</orderType>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <schema>
+        <name>SMARTCO</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+  </indexes>
   <properties>
     <entry>
       <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
-      <value class="java.lang.String">Connection1</value>
+      <value class="java.lang.String">CO</value>
     </entry>
     <entry>
       <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
@@ -528,6 +418,6 @@
     </entry>
   </properties>
   <schema>
-    <name>CICADMIN</name>
+    <name>SMARTCO</name>
   </schema>
 </table>
