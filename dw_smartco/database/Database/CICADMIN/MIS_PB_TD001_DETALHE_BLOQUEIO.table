@@ -9,6 +9,9 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
+      <identityProperties>
+        <generated>ALWAYS</generated>
+      </identityProperties>
       <notNull>true</notNull>
     </column>
     <column>

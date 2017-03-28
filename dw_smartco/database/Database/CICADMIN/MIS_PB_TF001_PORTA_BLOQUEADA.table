@@ -9,6 +9,9 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
+      <identityProperties>
+        <generated>ALWAYS</generated>
+      </identityProperties>
       <notNull>true</notNull>
     </column>
     <column>
@@ -25,17 +28,122 @@
         </dataTypeID>
       </dataTypeUsage>
       <notNull>true</notNull>
-      <properties>
-        <entry>
-          <key>Comment</key>
-          <value class="java.lang.String">Surrugate Key</value>
-        </entry>
-      </properties>
+    </column>
+    <column>
+      <name>LOCALIDADE_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>DETALHE_BLOQUEIO_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>DATA_BLOQUEIO_FK</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
     </column>
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <name>MIS_PB_TF001_PORTA_BLOQUE_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>DETALHE_BLOQUEIO_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>CICADMIN</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CICADMIN</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>MIS_PB_TD001_DETALHE_BLOQUEIO_FK</name>
+        <childObjectNames>
+          <childObjectName>ID</childObjectName>
+        </childObjectNames>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD001_DETALHE_BLOQUEIO</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUE_FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>LOCALIDADE_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>CICADMIN</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CICADMIN</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>MIS_TD003_LOCALIDADE_FK</name>
+        <childObjectNames>
+          <childObjectName>ID</childObjectName>
+        </childObjectNames>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD003_LOCALIDADE</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUE_FK3</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>DATA_BLOQUEIO_FK</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
+            <schemaName>CICADMIN</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CICADMIN</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>MIS_TD002_TEMPO_FK</name>
+        <childObjectNames>
+          <childObjectName>DAY_ID</childObjectName>
+        </childObjectNames>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>MIS_TD002_TEMPO</name>
+          <schemaName>SMARTCO</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>ID</name>
@@ -49,18 +157,34 @@
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.NameBasedID">
-        <name>MIS_PB_TD001_DETALHE_BLOQU_PK</name>
+      <indexID class="oracle.javatools.db.NameBasedID">
+        <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
         <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_PB_TD001_DETALHE_BLOQUEIO</name>
+          <name>MIS_PB_TF001_PORTA_BLOQUEADA</name>
           <schemaName>CICADMIN</schemaName>
           <type>TABLE</type>
         </parent>
         <schemaName>CICADMIN</schemaName>
-        <type>CONSTRAINT</type>
-      </referenceID>
+        <type>INDEX</type>
+      </indexID>
     </constraint>
   </constraints>
+  <indexes>
+    <index>
+      <name>MIS_PB_TF001_PORTA_BLOQUEA_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>ID</expressionSource>
+          <orderType>ASC</orderType>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <schema>
+        <name>CICADMIN</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </index>
+  </indexes>
   <properties>
     <entry>
       <key>TableType</key>

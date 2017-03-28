@@ -9,85 +9,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <identityProperties>
-        <generated>ALWAYS</generated>
-      </identityProperties>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>PAIS</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Integer">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>REGIONAL</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>ESTADO</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>CLSTR</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <name>CIDADE</name>
-      <dataTypeUsage>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">50</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
     </column>
     <column>
       <name>ARMARIO</name>
@@ -95,72 +17,247 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">50</value>
+            <value class="java.lang.Long">11</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <typeName>VARCHAR2</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>REGIONAL</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">12</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>CIDADE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>ESTADO</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>DATE_FROM</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>DATE_TO</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <name>VERSION</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
     </column>
   </columns>
-  <constraints>
-    <constraint class="oracle.javatools.db.PKConstraint">
-      <name>MIS_TD003_LOCALIDADE_PK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.NameBasedID">
-          <name>ID</name>
-          <parent class="oracle.javatools.db.NameBasedID">
-            <name>MIS_TD003_LOCALIDADE</name>
-            <schemaName>SMARTCO</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <schemaName>SMARTCO</schemaName>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <enabled>true</enabled>
-      <indexID class="oracle.javatools.db.NameBasedID">
-        <name>MIS_TD003_LOCALIDADE_PK</name>
-        <parent class="oracle.javatools.db.NameBasedID">
-          <name>MIS_TD003_LOCALIDADE</name>
-          <schemaName>SMARTCO</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <schemaName>SMARTCO</schemaName>
-        <type>INDEX</type>
-      </indexID>
-    </constraint>
-  </constraints>
   <indexes>
     <index>
-      <name>MIS_TD003_LOCALIDADE_INDEX</name>
+      <name>IDX_MIS_TD003_LOCALIDADE_TK</name>
       <columnExpressions>
         <columnExpression>
-          <expressionSource>ARMARIO</expressionSource>
+          <expressionSource>ID</expressionSource>
           <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IDX_MIS_TD003_LOCALIDADE_TK</name>
+                  <identifier class="java.math.BigDecimal">284076</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>MIS_TD003_LOCALIDADE</name>
+                    <identifier class="java.math.BigDecimal">284073</identifier>
+                    <schemaName>CICADMIN</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>CICADMIN</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
         </columnExpression>
       </columnExpressions>
-      <indexType>UNIQUE</indexType>
+      <indexType>BITMAP</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IDX_MIS_TD003_LOCALIDADE_TK</name>
+            <identifier class="java.math.BigDecimal">284076</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MIS_TD003_LOCALIDADE</name>
+              <identifier class="java.math.BigDecimal">284073</identifier>
+              <schemaName>CICADMIN</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>CICADMIN</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>4194304</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>4194304</nextExtent>
+            <percentFree>10</percentFree>
+            <percentIncrease>0</percentIncrease>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>REPOSITORY</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
       <schema>
         <name>SMARTCO</name>
       </schema>
       <systemGenerated>false</systemGenerated>
     </index>
     <index>
-      <name>MIS_TD003_LOCALIDADE_PK</name>
+      <name>IDX_MIS_TD003_LOC_LOOKUP</name>
       <columnExpressions>
         <columnExpression>
-          <expressionSource>ID</expressionSource>
+          <expressionSource>ARMARIO</expressionSource>
           <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>ARMARIO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IDX_MIS_TD003_LOC_LOOKUP</name>
+                  <identifier class="java.math.BigDecimal">284082</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>MIS_TD003_LOCALIDADE</name>
+                    <identifier class="java.math.BigDecimal">284073</identifier>
+                    <schemaName>CICADMIN</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>CICADMIN</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
         </columnExpression>
       </columnExpressions>
-      <indexType>UNIQUE</indexType>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IDX_MIS_TD003_LOC_LOOKUP</name>
+            <identifier class="java.math.BigDecimal">284082</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MIS_TD003_LOCALIDADE</name>
+              <identifier class="java.math.BigDecimal">284073</identifier>
+              <schemaName>CICADMIN</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>CICADMIN</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>4194304</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>4194304</nextExtent>
+            <percentFree>10</percentFree>
+            <percentIncrease>0</percentIncrease>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>REPOSITORY</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
       <schema>
         <name>SMARTCO</name>
       </schema>
-      <systemGenerated>true</systemGenerated>
+      <systemGenerated>false</systemGenerated>
     </index>
   </indexes>
   <properties>
