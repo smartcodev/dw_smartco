@@ -14,92 +14,92 @@
 -- Values for end date and time span attributes are place holders. They need
 -- to be filled in correctly later in this script.
 --
-CREATE TABLE time_calendar_dim AS
-WITH base_calendar AS
-  (SELECT CurrDate          AS Day_ID,
-    1                       AS Day_Time_Span,
-    CurrDate                AS Day_End_Date,
-    TO_CHAR(CurrDate,'Day') AS Week_Day_Full,
-    TO_CHAR(CurrDate,'DY')  AS Week_Day_Short,
-    TO_NUMBER(TRIM(leading '0'
-  FROM TO_CHAR(CurrDate,'D'))) AS Day_Num_of_Week,
-    TO_NUMBER(TRIM(leading '0'
-  FROM TO_CHAR(CurrDate,'DD'))) AS Day_Num_of_Month,
-    TO_NUMBER(TRIM(leading '0'
-  FROM TO_CHAR(CurrDate,'DDD'))) AS Day_Num_of_Year,
-    UPPER(TO_CHAR(CurrDate,'Mon')
+DROP TABLE MIS_TD002_TEMPO;
+
+CREATE TABLE MIS_TD002_TEMPO AS
+WITH BASE_CALENDAR AS
+  (SELECT CURRDATE          AS DAY_ID,
+    1                       AS DAY_TIME_SPAN,
+    CURRDATE                AS DAY_END_DATE,
+    TO_CHAR(CURRDATE,'Day') AS WEEK_DAY_FULL,
+    TO_CHAR(CURRDATE,'DY')  AS WEEK_DAY_SHORT,
+    TO_NUMBER(TRIM(LEADING '0'
+  FROM TO_CHAR(CURRDATE,'D'))) AS DAY_NUM_OF_WEEK,
+    TO_NUMBER(TRIM(LEADING '0'
+  FROM TO_CHAR(CURRDATE,'DD'))) AS DAY_NUM_OF_MONTH,
+    TO_NUMBER(TRIM(LEADING '0'
+  FROM TO_CHAR(CURRDATE,'DDD'))) AS DAY_NUM_OF_YEAR,
+    UPPER(TO_CHAR(CURRDATE,'Mon')
     || '-'
-    || TO_CHAR(CurrDate,'YYYY')) AS Month_ID,
-    TO_CHAR(CurrDate,'Mon')
+    || TO_CHAR(CURRDATE,'YYYY')) AS MONTH_ID,
+    TO_CHAR(CURRDATE,'Mon')
     || ' '
-    || TO_CHAR(CurrDate,'YYYY') AS Month_Short_Desc,
-    RTRIM(TO_CHAR(CurrDate,'Month'))
+    || TO_CHAR(CURRDATE,'YYYY') AS MONTH_SHORT_DESC,
+    RTRIM(TO_CHAR(CURRDATE,'Month'))
     || ' '
-    || TO_CHAR(CurrDate,'YYYY') AS Month_Long_Desc,
-    TO_CHAR(CurrDate,'Mon')     AS Month_Short,
-    TO_CHAR(CurrDate,'Month')   AS Month_Long,
-    TO_NUMBER(TRIM(leading '0'
-  FROM TO_CHAR(CurrDate,'MM'))) AS Month_Num_of_Year,
+    || TO_CHAR(CURRDATE,'YYYY') AS MONTH_LONG_DESC,
+    TO_CHAR(CURRDATE,'Mon')     AS MONTH_SHORT,
+    TO_CHAR(CURRDATE,'Month')   AS MONTH_LONG,
+    TO_NUMBER(TRIM(LEADING '0'
+  FROM TO_CHAR(CURRDATE,'MM'))) AS MONTH_NUM_OF_YEAR,
     'Q'
-    || UPPER(TO_CHAR(CurrDate,'Q')
+    || UPPER(TO_CHAR(CURRDATE,'Q')
     || '-'
-    || TO_CHAR(CurrDate,'YYYY'))     AS Quarter_ID,
-    TO_NUMBER(TO_CHAR(CurrDate,'Q')) AS Quarter_Num_of_Year,
+    || TO_CHAR(CURRDATE,'YYYY'))     AS QUARTER_ID,
+    TO_NUMBER(TO_CHAR(CURRDATE,'Q')) AS QUARTER_NUM_OF_YEAR,
     CASE
-      WHEN TO_NUMBER(TO_CHAR(CurrDate,'Q')) <= 2
+      WHEN TO_NUMBER(TO_CHAR(CURRDATE,'Q')) <= 2
       THEN 1
       ELSE 2
-    END AS half_num_of_year,
+    END AS HALF_NUM_OF_YEAR,
     CASE
-      WHEN TO_NUMBER(TO_CHAR(CurrDate,'Q')) <= 2
+      WHEN TO_NUMBER(TO_CHAR(CURRDATE,'Q')) <= 2
       THEN 'H'
         || 1
         || '-'
-        || TO_CHAR(CurrDate,'YYYY')
+        || TO_CHAR(CURRDATE,'YYYY')
       ELSE 'H'
         || 2
         || '-'
-        || TO_CHAR(CurrDate,'YYYY')
-    END                      AS half_of_year_id,
-    TO_CHAR(CurrDate,'YYYY') AS Year_ID
+        || TO_CHAR(CURRDATE,'YYYY')
+    END                      AS HALF_OF_YEAR_ID,
+    TO_CHAR(CURRDATE,'YYYY') AS YEAR_ID
   FROM
-    (SELECT level n,
+    (SELECT LEVEL N,
       -- Calendar starts at the day after this date.
-      TO_DATE('31/12/2010','DD/MM/YYYY') + NUMTODSINTERVAL(level,'DAY') CurrDate
-    FROM dual
+      TO_DATE('31/12/2010','DD/MM/YYYY') + NUMTODSINTERVAL(LEVEL,'DAY') CURRDATE
+    FROM DUAL
       -- Change for the number of days to be added to the table.
-      CONNECT BY level <= 3650
+      CONNECT BY LEVEL <= 3650
     )
   )
-SELECT day_id,
-  day_time_span,
-  day_end_date,
-  week_day_full,
-  week_day_short,
-  day_num_of_week,
-  day_num_of_month,
-  day_num_of_year,
-  month_id,
-  COUNT(*) OVER (PARTITION BY month_id)    AS Month_Time_Span,
-  MAX(day_id) OVER (PARTITION BY month_id) AS Month_End_Date,
-  month_short_desc,
-  month_long_desc,
-  month_short,
-  month_long,
-  month_num_of_year,
-  quarter_id,
-  COUNT(*) OVER (PARTITION BY quarter_id)    AS Quarter_Time_Span,
-  MAX(day_id) OVER (PARTITION BY quarter_id) AS Quarter_End_Date,
-  quarter_num_of_year,
-  half_num_of_year,
-  half_of_year_id,
-  COUNT(*) OVER (PARTITION BY half_of_year_id)    AS Half_Year_Time_Span,
-  MAX(day_id) OVER (PARTITION BY half_of_year_id) AS Half_Year_End_Date,
-  year_id,
-  COUNT(*) OVER (PARTITION BY year_id)    AS Year_Time_Span,
-  MAX(day_id) OVER (PARTITION BY year_id) AS Year_End_Date
-FROM base_calendar
-ORDER BY day_id;
-);
---
+SELECT DAY_ID,
+  DAY_TIME_SPAN,
+  DAY_END_DATE,
+  WEEK_DAY_FULL,
+  WEEK_DAY_SHORT,
+  DAY_NUM_OF_WEEK,
+  DAY_NUM_OF_MONTH,
+  DAY_NUM_OF_YEAR,
+  MONTH_ID,
+  COUNT(*) OVER (PARTITION BY MONTH_ID)    AS MONTH_TIME_SPAN,
+  MAX(DAY_ID) OVER (PARTITION BY MONTH_ID) AS MONTH_END_DATE,
+  MONTH_SHORT_DESC,
+  MONTH_LONG_DESC,
+  MONTH_SHORT,
+  MONTH_LONG,
+  MONTH_NUM_OF_YEAR,
+  QUARTER_ID,
+  COUNT(*) OVER (PARTITION BY QUARTER_ID)    AS QUARTER_TIME_SPAN,
+  MAX(DAY_ID) OVER (PARTITION BY QUARTER_ID) AS QUARTER_END_DATE,
+  QUARTER_NUM_OF_YEAR,
+  HALF_NUM_OF_YEAR,
+  HALF_OF_YEAR_ID,
+  COUNT(*) OVER (PARTITION BY HALF_OF_YEAR_ID)    AS HALF_YEAR_TIME_SPAN,
+  MAX(DAY_ID) OVER (PARTITION BY HALF_OF_YEAR_ID) AS HALF_YEAR_END_DATE,
+  YEAR_ID,
+  COUNT(*) OVER (PARTITION BY YEAR_ID)    AS YEAR_TIME_SPAN,
+  MAX(DAY_ID) OVER (PARTITION BY YEAR_ID) AS YEAR_END_DATE
+FROM BASE_CALENDAR
+ORDER BY DAY_ID;);
 COMMIT;
